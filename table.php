@@ -145,13 +145,13 @@ if ($merged_users) {
 // --*
 $cc = array();
 $cc['options'] = array(
-	CURLOPT_USERAGENT => 'Editcount/0.2 (http://wiki.teamliquid.net/starcraft2/User:ChapatiyaqPTSM; chapatiyaq@gmail.com) Chapatiyaq/1.0',
-	//CURLOPT_HTTPHEADER => array( 'Content-Type: multipart/form-data', '' ),
+	CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; editcount/1.0; chapatiyaq@gmail.com)',
 	CURLOPT_RETURNTRANSFER => 1,
-	CURLOPT_ENCODING => 'deflate, gzip, identity',
+	CURLOPT_ENCODING => '',
 	CURLOPT_COOKIEJAR => $cookieFile,
 	CURLOPT_COOKIEFILE => $cookieFile,
-	CURLOPT_POST => true
+	CURLOPT_POST => true,
+	CURLOPT_TIMEOUT => 60
 );
 
 foreach (array_keys($wikis) as $wiki) {
