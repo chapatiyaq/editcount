@@ -248,30 +248,30 @@ foreach (array_keys($wikis) as $wiki) {
 	curl_setopt($curl, CURLOPT_URL, 'http://wiki.teamliquid.net/' . $wiki . '/api.php');
 
 	// Contributions
-	$postdata = http_build_query(array(
+	$postdata = array(
 		'action' => 'query',
 		'list' => 'allusers',
 		'auwitheditsonly' => true,
 		'auprop' => 'editcount|groups',
 		'aulimit' => ($bot ? 5000 : 500),
+		'continue' => '',
 		'format' => 'php'
-	));
+	);
 	$continue = getContributions($curl, $postdata, $wiki, $stats);
 	while ( $continue !== 0 ) {
 		$postdata['aufrom'] = str_replace(' ', '%20', $continue['aufrom']);
-		$postdata['continue'] = $continue['continue'];
 		$continue = getContributions($curl, $postdata, $wiki, $stats);
 	}
 
 	// Merges
-	$postdata = http_build_query(array(
+	$postdata = array(
 		'action' => 'query',
 		'list' => 'logevents',
 		'letype' => 'usermerge',
 		'ledir' => 'newer',
 		'lelimit' => ($bot ? 5000 : 500),
 		'format' => 'php'
-	));
+	);
 	$continue = getMerges($curl, $postdata, $wiki, $merges);
 	while ( $continue !== 0 ) {
 		$postdata['lestart'] = str_replace(' ', '%20', $continue['lestart']);
@@ -299,7 +299,7 @@ unset($userstats);
 
 uasort($stats, 'cmp');
 function cmp($a, $b) {
-    return $b['count_total'] - $a['count_total'];
+	return $b['count_total'] - $a['count_total'];
 }
 ?>
 	<div class="flexbox">
