@@ -8,7 +8,7 @@ $get_wikis = isset($_GET['wikis']) && is_array($_GET['wikis']) ? $_GET['wikis'] 
 	array('starcraft', 'starcraft2', 'dota2', 'hearthstone', 'heroes', 'smash', 'counterstrike', 'overwatch', 'commons', 'warcraft', 'fighters', 'rocketleague');
 $clean_wikis_list = array();
 foreach ($get_wikis as $wiki) {
-	if (preg_match('/^(starcraft|starcraft2|dota2|hearthstone|heroes|smash|counterstrike|overwatch|commons|warcraft|fighters|rocketleague)$/', $wiki)) {
+	if (preg_match('/^(starcraft|starcraft2|dota2|hearthstone|heroes|smash|counterstrike|overwatch|commons|warcraft|fighters|rocketleague|clashroyale|crossfire|teamfortress|trackmania)$/', $wiki)) {
 		$clean_wikis_list[$wiki] = $wiki;
 	}
 }
@@ -92,6 +92,14 @@ foreach ($get_wikis as $wiki) {
 			<label class="wiki-button fighters" for="fighters" title="Fighting Games"></label>
 			<input type="checkbox" <?php echo isset($clean_wikis_list['rocketleague']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="rocketleague" id="rocketleague"/>
 			<label class="wiki-button rocketleague" for="rocketleague" title="Rocket League"></label>
+			<input type="checkbox" <?php echo isset($clean_wikis_list['clashroyale']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="clashroyale" id="clashroyale"/>
+			<label class="wiki-button clashroyale" for="clashroyale" title="Clash Royale"></label>
+			<input type="checkbox" <?php echo isset($clean_wikis_list['crossfire']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="crossfire" id="crossfire"/>
+			<label class="wiki-button crossfire" for="crossfire" title="CrossFire"></label>
+			<input type="checkbox" <?php echo isset($clean_wikis_list['teamfortress']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="teamfortress" id="teamfortress"/>
+			<label class="wiki-button teamfortress" for="teamfortress" title="Team Fortress"></label>
+			<input type="checkbox" <?php echo isset($clean_wikis_list['trackmania']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="trackmania" id="trackmania"/>
+			<label class="wiki-button trackmania" for="trackmania" title="TrackMania"></label>
 		</div>
 		<input type="submit" />
 	</form>
