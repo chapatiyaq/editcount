@@ -5,7 +5,7 @@ Use the code in the 'databases.sql' and execute it to create the database requir
 Login / password
 ================
 
-Fill the file 'connection.php' with the adequate logins and passwords:
+Rename the file 'connection.php.example' to 'connection.php' and fill it with the adequate logins and passwords:
 * For the wiki, $loginName and $loginPass the username and password of a bot account
 * For the database, DBNAME, DBUSER and DBPASSWORD the database name, user name and password for access to the database (SELECT)
 
@@ -22,6 +22,7 @@ Example of folder structure:
   /editcount
     /index.php
     /table.php
+    /connection.php
     /flag-icon.min.css
     /style.css
     ...
