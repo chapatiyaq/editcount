@@ -1,5 +1,6 @@
 <?php
 require_once('connection.php');
+require_once('wikis.php');
 $cookieFile = 'cookies.tmp';
 
 //$merged_users = isset($_GET['merge']) ? $_GET['merge'] : true;
@@ -20,27 +21,7 @@ if ($show_flags) {
 	}
 }
 
-$wiki_names = array(
-	'starcraft' => 'Brood War',
-	'starcraft2' => 'StarCraft II',
-	'dota2' => 'Dota 2',
-	'hearthstone' => 'Hearthstone',
-	'heroes' => 'Heroes',
-	'smash' => 'Smash Bros',
-	'counterstrike' => 'Counter-Strike',
-	'overwatch' => 'Overwatch',
-	'commons' => 'Commons',
-	'warcraft' => 'Warcraft',
-	'fighters' => 'Fighting Games',
-	'rocketleague' => 'Rocket League',
-	'clashroyale' => 'Clash Royale',
-	'crossfire' => 'CrossFire',
-	'teamfortress' => 'Team Fortress',
-	'trackmania' => 'TrackMania'
-);
-$default_wikis = array('starcraft', 'starcraft2', 'dota2', 'hearthstone', 'heroes', 'smash', 'counterstrike', 'overwatch', 'commons', 'warcraft', 'fighters', 'rocketleague');
-$get_wikis = (isset($_GET['wikis']) && is_array($_GET['wikis'])) ?
-              $_GET['wikis'] : $default_wikis;
+$get_wikis = (isset($_GET['wikis']) && is_array($_GET['wikis'])) ? $_GET['wikis'] : $default_wikis;
 $clean_wikis_list = array();
 foreach ($get_wikis as $wiki) {
 	if (preg_match('/^(' . implode('|', array_keys($wiki_names)) . ')$/',
