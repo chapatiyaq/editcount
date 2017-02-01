@@ -67,8 +67,8 @@ foreach ($get_wikis as $wiki) {
 		<!--<input type="checkbox" <?php echo $merged_users ? 'checked="" ' : ''; ?>name="merge" value="1" id="merge"/>
 		<label for="merge">Merge edit counts of merged users</label>-->
 		<div id="wikis">
-<?php foreach ($wiki_names as $wiki => $wiki_name) { ?>
 			<span><b>Select wikis: </b></span>
+<?php foreach ($wiki_names as $wiki => $wiki_name) { ?>
 			<input type="checkbox" <?php echo isset($clean_wikis_list['<?php echo $wiki; ?>']) ? 'checked="checked" ' : ''; ?>name="wikis[]" value="<?php echo $wiki; ?>" id="<?php echo $wiki; ?>"/>
 			<label class="wiki-button <?php echo $wiki; ?>" for="<?php echo $wiki; ?>" title="<?php echo $wiki_name; ?>"></label>
 <?php } ?>
