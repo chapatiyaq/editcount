@@ -18,7 +18,7 @@ foreach ($get_wikis as $wiki) {
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Liquipedia Edit count</title>
-	<script type="text/javascript" src="script.js" />
+	<script src="script.js" ></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="flag-icon.min.css">
 	<script type="text/javascript">
