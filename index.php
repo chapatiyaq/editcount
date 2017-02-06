@@ -8,7 +8,7 @@ $merged_users = false;
 $get_wikis = isset($_GET['wikis']) && is_array($_GET['wikis']) ? $_GET['wikis'] : $default_wikis;
 $clean_wikis_list = array();
 foreach ($get_wikis as $wiki) {
-	if (preg_match('/^(' . implode('|', array_keys($wiki_names)) . ')$/', $wiki)) {
+	if (preg_match('/^(' . implode('|', array_keys($wiki_details)) . ')$/', $wiki)) {
 		$clean_wikis_list[$wiki] = $wiki;
 	}
 }
