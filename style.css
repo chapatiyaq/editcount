@@ -91,6 +91,15 @@ input[type=checkbox] {
 .wiki-button.fifa label {
 	background-image: url(../images/logos/fifa.png);
 }
+.wiki-buttons-helpers {
+	margin-bottom: .5em;
+}
+.wiki-buttons-helpers button {
+	font-size: .9em;
+}
+.wiki-buttons-helpers button + button {
+	margin-left: .5em;
+}
 table {
 	border-collapse: collapse;
 
