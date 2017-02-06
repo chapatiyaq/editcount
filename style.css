@@ -95,7 +95,7 @@ input[type=checkbox] {
 	margin-bottom: .5em;
 }
 .wiki-buttons-helpers button {
-	font-size: .9em;
+	font-size: 11px;
 }
 .wiki-buttons-helpers button + button {
 	margin-left: .5em;
