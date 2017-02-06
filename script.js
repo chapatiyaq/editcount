@@ -36,7 +36,7 @@
     };
     var helpersDiv = document.createElement('div');
     helpersDiv.setAttribute('class', 'wiki-buttons-helpers');
-    wikiButtonsDiv.after(div);
+    wikiButtonsDiv.after(helpersDiv);
     var button;
     for (var i in buttons)
     {
