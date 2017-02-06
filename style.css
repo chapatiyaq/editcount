@@ -236,3 +236,12 @@ td.sysop {
 #flags table {
 	font-size: .8em;
 }
+
+@media (max-width: 600px) {
+	body {
+		font-size: 14px;
+	}
+	.wiki-buttons {
+		display: block;
+	}
+}
