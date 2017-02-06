@@ -24,7 +24,7 @@ if ($show_flags) {
 $get_wikis = (isset($_GET['wikis']) && is_array($_GET['wikis'])) ? $_GET['wikis'] : $default_wikis;
 $clean_wikis_list = array();
 foreach ($get_wikis as $wiki) {
-	if (preg_match('/^(' . implode('|', array_keys($wiki_names)) . ')$/',
+	if (preg_match('/^(' . implode('|', array_keys($wiki_details)) . ')$/',
 		$wiki)) {
 		$clean_wikis_list[$wiki] = $wiki;
 	}
@@ -114,7 +114,7 @@ function mergeUsers(&$stats, &$mergeStats, $merges) {
 global $wikis;
 $wikis = array();
 foreach ($clean_wikis_list as $wiki) {
-	$wikis[$wiki] = $wiki_names[$wiki];
+	$wikis[$wiki] = $wiki_details[$wiki]['name'];
 }
 
 $stats = array();
