@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener("DOMContentLoaded", function(event) {
     var wikiButtonsDiv = document.querySelector('.wiki-buttons');
     var buttons = {
         'clear': {
@@ -46,4 +46,4 @@
         button.addEventListener('click', buttons[i].onClick);
         helpersDiv.append(button);
     }
-})();
+});
